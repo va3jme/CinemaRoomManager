@@ -1,3 +1,8 @@
+/*
+ * Jamie Cashin
+ * email: jkcashin@jamiecashin.com
+ * More about me - https://about.me/jamiecashin
+ */
 package cinema
 
 import java.lang.Exception
