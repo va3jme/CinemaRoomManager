@@ -1,18 +1,27 @@
 /*
- * Jamie Cashin
- * email: jkcashin@jamiecashin.com
- * More about me - https://about.me/jamiecashin
+ * JetBrains Academy exercise for Kotlin for "Kotlin Basics" track,
+ * track URL: https://hyperskill.org/tracks/18
+ *
+ * Submission (c) 2023 by Jamie Cashin
+ *   eMail:  jkcashin@jamiecashin.com
+ *   My info:  https://about.me/jamiecashin
  */
 package cinema
 
 import java.lang.Exception
 
-const val SEAT_PRICE_DISCOUNT = 8
+// Set PRODUCTION false to enable extra features intended for testing.
+// Note that when PRODUCTION is false, the code will fail the hyperskill.org
+// exercise checker.
+const val PRODUCTION = false // Set false for testing, true for production
+
+const val SEAT_PRICE_DISCOUNT = 8 // cheap seat in a "large" theatre
 const val SEAT_PRICE_REGULAR = 10
-const val LARGE_THEATRE = 60 // # seats in a large theatre
+const val LARGE_THEATRE = 60 // min # seats in a large theatre
 const val SEAT_AVAILABLE = 'S'
 const val SEAT_BOOKED = 'B'
-const val TEST = false // Set true for testing, false for production
+const val MAXROWS = 9
+const val MAXSEATS = 9
 
 /**
  * Given a prompt string, presents the prompt (formatted) and gets the
@@ -34,11 +43,23 @@ fun getInt(prompt: String): Int {
  * @param seats the number of seats per row in our Cinema
  *
  * @constructor Creates a Cinema object
+ *
+ * @throws Exception for out-of-range rows, seats
  */
 class Cinema(rows: Int, seats: Int) {
     // Constants ---------------------------------------------------------------
-    private val myNumRows = rows
-    private val myNumSeats = seats
+    private val myNumRows: Int
+    private val myNumSeats: Int
+
+    init {
+        when {
+            rows !in 1..MAXROWS -> throw Exception("Cinema() rows value $rows invalid, must be between 1 and $MAXROWS")
+            seats !in 1..MAXSEATS -> throw Exception("Cinema() seats value $seats invalid, must be between 1 and $MAXSEATS")
+        }
+        myNumRows = rows
+        myNumSeats = seats
+    }
+
     private val myCapacity = rows * seats
     private val myTotalIncome = (1..rows).sumOf { seats * getPrice(it) }
 
@@ -123,22 +144,25 @@ class Cinema(rows: Int, seats: Int) {
      *
      * @return Unit
      */
-    fun printStatistics() = println(  "\n"
-                                    + "Number of purchased tickets: $myTicketsPurchased\n"
-                                    + "Percentage: ${ "%.2f".format(myTicketsPurchased.toFloat() / myCapacity.toFloat() * 100) }%\n"
-                                    + "Current income: \$$myCurrentIncome\n"
-                                    + "Total income: \$$myTotalIncome")
+    fun printStatistics() = println(
+          "\n"
+        + "Number of purchased tickets: $myTicketsPurchased\n"
+        + "Percentage: ${ "%.2f".format(myTicketsPurchased.toFloat() / myCapacity.toFloat() * 100) }%\n"
+        + "Current income: \$$myCurrentIncome\n"
+        + "Total income: \$$myTotalIncome")
 
     /**
-     * Run code tests
+     * Run code tests. May not be used in PRODUCTION mode.
      *
      * @return Unit
-     * @throws when TEST is false
+     * @throws Exception when PRODUCTION is false
      */
     fun test() {
-        if (!TEST) throw Exception("TEST is false, fun test() should not be called")
+        if (PRODUCTION) {
+            throw Exception("PRODUCTION is true, fun test() should not be called for production code")
+        }
         for (row in 1..myNumRows) {
-            println("Row $row is ${getPrice(row)}")
+            println("Row $row seats are \$${getPrice(row)} each")
         }
     }
 }
@@ -156,7 +180,7 @@ fun main() {
              + "1. Show the seats\n"
              + "2. Buy a ticket\n"
              + "3. Statistics\n"
-             + if (TEST) { "9. Test\n" } else { "" }
+             + if (!PRODUCTION) { "9. Test\n" } else { "" }
              + "0. Exit\n"
              + "> ")
 
@@ -165,7 +189,7 @@ fun main() {
                 1 -> myCinema.printTable()
                 2 -> myCinema.purchaseSeat()
                 3 -> myCinema.printStatistics()
-                9 -> if (TEST) { myCinema.test() }
+                9 -> if (!PRODUCTION) { myCinema.test() }
                 0 -> break
             }
         } catch (e: NumberFormatException) {
