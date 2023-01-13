@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/101622377/Cinema_Room_Manager.iml" filepath="$PROJECT_DIR$/.idea/modules/101622377/Cinema_Room_Manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/42029923/Cinema_Room_Manager.Cinema_Room_Manager-task.iml" filepath="$PROJECT_DIR$/.idea/modules/42029923/Cinema_Room_Manager.Cinema_Room_Manager-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1898575522/Cinema_Room_Manager.Cinema_Room_Manager-task-out.iml" filepath="$PROJECT_DIR$/.idea/modules/1898575522/Cinema_Room_Manager.Cinema_Room_Manager-task-out.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1898575522/Cinema_Room_Manager.Cinema_Room_Manager-task-out.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1898575522/Cinema_Room_Manager.Cinema_Room_Manager-task-out.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1898575522/Cinema_Room_Manager.Cinema_Room_Manager-task-out.test.iml" filepath="$PROJECT_DIR$/.idea/modules/1898575522/Cinema_Room_Manager.Cinema_Room_Manager-task-out.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/42029923/Cinema_Room_Manager.Cinema_Room_Manager-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/42029923/Cinema_Room_Manager.Cinema_Room_Manager-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/42029923/Cinema_Room_Manager.Cinema_Room_Manager-task.test.iml" filepath="$PROJECT_DIR$/.idea/modules/42029923/Cinema_Room_Manager.Cinema_Room_Manager-task.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1178552344/Cinema_Room_Manager.util.iml" filepath="$PROJECT_DIR$/.idea/modules/-1178552344/Cinema_Room_Manager.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1178552344/Cinema_Room_Manager.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1178552344/Cinema_Room_Manager.util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1178552344/Cinema_Room_Manager.util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/-1178552344/Cinema_Room_Manager.util.test.iml" />
+    </modules>
+  </component>
+</project>
